@@ -9,7 +9,7 @@ public class RadioTest {
     public void onNextRadioStation() {
         Radio radio = new Radio(4, 0,10,50,0,100);
         radio.onNextRadioStation();
-        assertEquals(5,radio.getCurrentRadioStation());
+        assertEquals(5,radio.getCurrentRadioStation());//comm
     }
 
     @Test

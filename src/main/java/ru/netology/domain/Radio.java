@@ -102,7 +102,7 @@ public class Radio {
             this.currentSoundVolume++;
         }
         if (currentSoundVolume == maxSoundVolume){
-            this.currentSoundVolume = maxSoundVolume;
+            this.currentSoundVolume = maxSoundVolume;//im
         }
     }
 

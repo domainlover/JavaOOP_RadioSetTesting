@@ -10,11 +10,11 @@ import lombok.NoArgsConstructor;
 
 public class Radio {
     private int currentRadioStation;
-    private int minRadioStation;
-    private int maxRadioStation;
+    private int minRadioStation = 0;
+    private int maxRadioStation = 10;
     private int currentSoundVolume;
-    private int minSoundVolume;
-    private int maxSoundVolume;
+    private int minSoundVolume = 0;
+    private int maxSoundVolume = 100;
 
 
     public int getCurrentRadioStation() {
@@ -49,7 +49,7 @@ public class Radio {
             this.currentSoundVolume++;
         }
         if (currentSoundVolume == maxSoundVolume){
-            this.currentSoundVolume = maxSoundVolume;//im
+            this.currentSoundVolume = maxSoundVolume;
         }
     }
 

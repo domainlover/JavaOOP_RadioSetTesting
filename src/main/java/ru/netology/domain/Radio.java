@@ -17,15 +17,6 @@ public class Radio {
     private int maxSoundVolume = 100;
 
 
-    public int getCurrentRadioStation() {
-        return currentRadioStation;
-    }
-
-
-    public int getCurrentSoundVolume() {
-        return currentSoundVolume;
-    }
-
     public void onNextRadioStation() {
         if (currentRadioStation < maxRadioStation){
             this.currentRadioStation++;

@@ -8,47 +8,44 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Radio {
-    private int currentRadioStation = 4;
+    private int currentRadioStation;
     private int minRadioStation = 0;
     private int maxRadioStation = 10;
-    private int currentSoundVolume = 50;
+    private int currentSoundVolume;
     private int minSoundVolume = 0;
     private int maxSoundVolume = 100;
 
 
     public void onNextRadioStation() {
-        if (currentRadioStation < maxRadioStation){
-            this.currentRadioStation++;
-        }
-        if (currentRadioStation == maxRadioStation){
+        if (currentRadioStation == maxRadioStation) {
             this.currentRadioStation = minRadioStation;
+            return;
         }
+        this.currentRadioStation = currentRadioStation + 1;
     }
 
     public void onPrevRadioStation() {
-        if (currentRadioStation > minRadioStation){
-            this.currentRadioStation--;
-        }
-        if (currentRadioStation == minRadioStation){
+        if (currentRadioStation == minRadioStation) {
             this.currentRadioStation = maxRadioStation;
+            return;
         }
+        this.currentRadioStation = currentRadioStation - 1;
     }
+
 
     public void onNextSoundVolume(){
-        if (currentSoundVolume < maxSoundVolume){
-            this.currentSoundVolume++;
-        }
-        if (currentSoundVolume == maxSoundVolume){
+        if (currentSoundVolume == maxSoundVolume) {
             this.currentSoundVolume = maxSoundVolume;
+            return;
         }
+        this.currentSoundVolume = currentSoundVolume + 1;
     }
 
-    public void onPrevSoundVolume() {
-        if (currentSoundVolume > minSoundVolume){
-            this.currentSoundVolume--;
-        }
+    public void onPrevSoundVolume(){
         if (currentSoundVolume == minSoundVolume) {
             this.currentSoundVolume = minSoundVolume;
+            return;
         }
+        this.currentSoundVolume = currentSoundVolume - 1;
     }
 }

@@ -35,9 +35,9 @@ public class RadioTest {
 
     @Test
     public void onNextSoundVolume() {
-        Radio radio = new Radio(4, 0,10,50,0, 100);
+        Radio radio = new Radio(4, 0,10,0,0, 100);
         radio.onNextSoundVolume();
-        assertEquals(51,radio.getCurrentSoundVolume());
+        assertEquals(1,radio.getCurrentSoundVolume());
     }
 
     @Test

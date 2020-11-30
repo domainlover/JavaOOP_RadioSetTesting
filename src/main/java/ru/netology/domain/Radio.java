@@ -44,20 +44,18 @@ public class Radio {
 
 
     public void onNextSoundVolume(){
-        if (currentSoundVolume < maxSoundVolume){
-            this.currentSoundVolume++;
-        }
-        if (currentSoundVolume == maxSoundVolume){
+        if (currentSoundVolume == maxSoundVolume) {
             this.currentSoundVolume = maxSoundVolume;
+            return;
         }
+        this.currentSoundVolume = currentSoundVolume + 1;
     }
 
-    public void onPrevSoundVolume() {
-        if (currentSoundVolume > minSoundVolume){
-            this.currentSoundVolume--;
-        }
+    public void onPrevSoundVolume(){
         if (currentSoundVolume == minSoundVolume) {
             this.currentSoundVolume = minSoundVolume;
+            return;
         }
+        this.currentSoundVolume = currentSoundVolume - 1;
     }
 }

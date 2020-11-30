@@ -15,7 +15,7 @@ public class RadioTest {
     @Test
     public void onPrevRadioStation() {
         Radio radio = new Radio(1, 0, 10, 50,0,100);
-        radio.onPrevRadioStationBasic();
+        radio.onPrevRadioStation();
         assertEquals(0,radio.getCurrentRadioStation());
     }
 
@@ -29,7 +29,7 @@ public class RadioTest {
     @Test
     public void onPrevRadioStationBeforeMin() {
         Radio radio = new Radio(0, 0,10,50,0,100);
-        radio.onPrevRadioStation2();
+        radio.onPrevRadioStation();
         assertEquals(10,radio.getCurrentRadioStation());
     }
 

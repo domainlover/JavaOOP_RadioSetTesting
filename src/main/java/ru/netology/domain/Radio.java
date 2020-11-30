@@ -35,30 +35,21 @@ public class Radio {
         }
     }
 
-    public void onPrevRadioStationBasic() {
-        if (currentRadioStation > minRadioStation){
-            this.currentRadioStation--;
+    public void onPrevRadioStation() {
+        if (currentRadioStation == minRadioStation) {
+            this.currentRadioStation = maxRadioStation;
+            return;
         }
-        if (currentRadioStation == minRadioStation){
-            this.currentRadioStation = minRadioStation;
-        }
+        this.currentRadioStation = currentRadioStation - 1;
     }
 
-    public void onPrevRadioStation2() {
-        if (currentRadioStation > minRadioStation){
-            this.currentRadioStation--;
-        }
-        if (currentRadioStation == minRadioStation){
-            this.currentRadioStation = maxRadioStation;
-        }
-    }
 
     public void onNextSoundVolume(){
         if (currentSoundVolume < maxSoundVolume){
             this.currentSoundVolume++;
         }
         if (currentSoundVolume == maxSoundVolume){
-            this.currentSoundVolume = maxSoundVolume;//im
+            this.currentSoundVolume = maxSoundVolume;
         }
     }
 

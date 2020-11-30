@@ -27,12 +27,11 @@ public class Radio {
     }
 
     public void onNextRadioStation() {
-        if (currentRadioStation < maxRadioStation){
-            this.currentRadioStation++;
-        }
-        if (currentRadioStation == maxRadioStation){
+        if (currentRadioStation == maxRadioStation) {
             this.currentRadioStation = minRadioStation;
+            return;
         }
+        this.currentRadioStation = currentRadioStation + 1;
     }
 
     public void onPrevRadioStation() {

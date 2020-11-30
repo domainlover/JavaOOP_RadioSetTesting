@@ -7,9 +7,9 @@ import static org.junit.jupiter.api.Assertions.*;
 public class RadioTest {
     @Test
     public void onNextRadioStation() {
-        Radio radio = new Radio(0, 0,10,50,0,100);
+        Radio radio = new Radio(9, 0,10,50,0,100);
         radio.onNextRadioStation();
-        assertEquals(1,radio.getCurrentRadioStation());//comm
+        assertEquals(10,radio.getCurrentRadioStation());//comm
     }
 
     @Test

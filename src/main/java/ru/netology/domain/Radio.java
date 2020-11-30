@@ -1,77 +1,61 @@
 package ru.netology.domain;
 
 public class Radio {
-    private int currentStation;
-    private int volume;
+    private int currentRadioStation;
+    private int minRadioStation;
+    private int maxRadioStation;
+    private int currentSoundVolume;
+    private int minSoundVolume;
+    private int maxSoundVolume;
 
-    public int getCurrentStation() {
-        return currentStation;
+    public Radio(int currentRadioStation, int minRadioStation, int maxRadioStation, int currentSoundVolume, int minSoundVolume, int maxSoundVolume) {
+        this.currentRadioStation = currentRadioStation;
+        this.minRadioStation = minRadioStation;
+        this.maxRadioStation = maxRadioStation;
+        this.currentSoundVolume = currentSoundVolume;
+        this.minSoundVolume = minSoundVolume;
+        this.maxSoundVolume = maxSoundVolume;
     }
 
-    public void setCurrentStation(int currentStation) {
-        if (currentStation > 9) {
+    public int getCurrentRadioStation() {
+        return currentRadioStation;
+    }
+
+
+    public int getCurrentSoundVolume() {
+        return currentSoundVolume;
+    }
+
+    public void onNextRadioStation() {
+        if (currentRadioStation == maxRadioStation) {
+            this.currentRadioStation = minRadioStation;
             return;
         }
-        if (currentStation < 0) {
+        this.currentRadioStation = currentRadioStation + 1;
+    }
+
+    public void onPrevRadioStation() {
+        if (currentRadioStation == minRadioStation) {
+            this.currentRadioStation = maxRadioStation;
             return;
         }
-        this.currentStation = currentStation;
+        this.currentRadioStation = currentRadioStation - 1;
     }
 
 
-    public void previousStation() {
-        if (currentStation == 0) {
-            this.currentStation = 9;
+    public void onNextSoundVolume(){
+        if (currentSoundVolume == maxSoundVolume) {
+            this.currentSoundVolume = maxSoundVolume;
             return;
         }
-        this.currentStation = currentStation - 1;
+        this.currentSoundVolume = currentSoundVolume + 1;
     }
 
-
-    public void nextStation() {
-        if (currentStation == 9) {
-            this.currentStation = 0;
+    public void onPrevSoundVolume(){
+        if (currentSoundVolume == minSoundVolume) {
+            this.currentSoundVolume = minSoundVolume;
             return;
         }
-        this.currentStation = currentStation + 1;
-    }
-
-
-    public int getVolume() {
-        return volume;
-    }
-
-    public void setVolume(int volume) {
-        if (volume < 0) {
-            return;
-        }
-        if (volume > 10) {
-            return;
-        }
-        this.volume = volume;
-    }
-
-    public void volumePlus() {
-        if (volume == 10) {
-            this.volume = volume;
-        }
-        if (volume < 10) {
-            this.volume = volume + 1;
-        }
-    }
-
-    public void volumeMinus() {
-        if (volume == 0) {
-            this.volume = volume;
-        }
-        if (volume > 0) {
-            this.volume = volume - 1;
-        }
+        this.currentSoundVolume = currentSoundVolume - 1;
     }
 }
-
-
-
-
-
-

@@ -35,7 +35,16 @@ public class Radio {
         }
     }
 
-    public void onPrevRadioStation() {
+    public void onPrevRadioStationBasic() {
+        if (currentRadioStation > minRadioStation){
+            this.currentRadioStation--;
+        }
+        if (currentRadioStation == minRadioStation){
+            this.currentRadioStation = minRadioStation;
+        }
+    }
+
+    public void onPrevRadioStation2() {
         if (currentRadioStation > minRadioStation){
             this.currentRadioStation--;
         }

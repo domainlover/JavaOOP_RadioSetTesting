@@ -7,16 +7,16 @@ import static org.junit.jupiter.api.Assertions.*;
 public class RadioTest {
     @Test
     public void onNextRadioStation() {
-        Radio radio = new Radio(4, 0,10,50,0,100);
+        Radio radio = new Radio(0, 0,10,50,0,100);
         radio.onNextRadioStation();
-        assertEquals(5,radio.getCurrentRadioStation());//comm
+        assertEquals(1,radio.getCurrentRadioStation());//comm
     }
 
     @Test
     public void onPrevRadioStation() {
-        Radio radio = new Radio(4, 0, 10, 50,0,100);
-        radio.onPrevRadioStation();
-        assertEquals(3,radio.getCurrentRadioStation());
+        Radio radio = new Radio(1, 0, 10, 50,0,100);
+        radio.onPrevRadioStationBasic();
+        assertEquals(0,radio.getCurrentRadioStation());
     }
 
     @Test
@@ -29,7 +29,7 @@ public class RadioTest {
     @Test
     public void onPrevRadioStationBeforeMin() {
         Radio radio = new Radio(0, 0,10,50,0,100);
-        radio.onPrevRadioStation();
+        radio.onPrevRadioStation2();
         assertEquals(10,radio.getCurrentRadioStation());
     }
 
@@ -42,9 +42,9 @@ public class RadioTest {
 
     @Test
     public void onPrevSoundVolume() {
-        Radio radio = new Radio(4, 0,10,50,0,100);
+        Radio radio = new Radio(4, 0,10,1,0,100);
         radio.onPrevSoundVolume();
-        assertEquals(49,radio.getCurrentSoundVolume());
+        assertEquals(0,radio.getCurrentSoundVolume());
     }
 
     @Test
